@@ -1,0 +1,18 @@
+[package]
+name = "hematite"
+version = "1.0.0"
+edition = "2024"
+
+[dependencies]
+rand = "0.10.2"
+cubecl = { version = "0.10.0", features = ["wgpu", "cuda"] }
+plotters = "0.3"
+plotters-arrows = "0.1"
+image = "0.25"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+strip = true
